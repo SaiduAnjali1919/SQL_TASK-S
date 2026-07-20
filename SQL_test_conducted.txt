@@ -1,0 +1,195 @@
+Part A
+
+1)Which of the following is a DDL command?
+a) INSERT
+b) UPDATE
+c) CREATE
+d) DELETE
+
+----->c) CREATE
+
+2)Which command is used to create a new database?
+a) MAKE DATABASE
+b) CREATE DATABASE
+c) ADD DATABASE
+d) NEW DATABASE
+
+---->b) CREATE DATABASE
+
+3)Which SQL command removes all records from a table but keeps its structure?
+a) DROP
+b) DELETE
+c) TRUNCATE
+d) REMOVE
+
+---->c) TRUNCATE
+
+4)Which command deletes the table structure and data permanently?
+a) TRUNCATE
+b) DROP
+c) DELETE
+d) CLEAR
+
+---->b) DROP
+
+5)Which command is used to rename an existing table?
+a) MODIFY TABLE
+b) RENAME TABLE old_name TO new_name;
+c) CHANGE TABLE
+d) UPDATE TABLE
+
+---->b) RENAME TABLE old_name TO new_name;
+
+6)The INSERT command is used to:
+a) Add new rows to a table
+b) Delete records
+c) Change column names
+d) Create a database
+
+---->a) Add new rows to a table
+
+7)The UPDATE command is used to:
+a) Add a column
+b) Modify existing data
+c) Create a new table
+d) Remove duplicate records
+
+---->b) Modify existing data
+
+8)Which command is used to delete specific records from a table?
+a) TRUNCATE
+b) DELETE
+c) DROP
+d) REMOVE
+
+---->b) DELETE
+
+9)Which command is used to retrieve data from one or more tables?
+a) SELECT
+b) INSERT
+c) UPDATE
+d) REMOVE
+
+---->a) SELECT
+
+10)Which of the following is a DML command?
+a) CREATE
+b) DROP
+c) TRUNCATE
+d) INSERT
+
+---->d) INSERT
+
+
+
+Part B 
+Write a SQL command to create a database named CompanyDB.
+Write a command to create a table named Employee with columns:
+EmpID INT, EmpName VARCHAR(50), Salary DECIMAL(10,2).
+Write a command to insert multiple records into the Employee table in a single query.
+Write a SQL command to update the Salary of employee Ravi to 55000.
+Write a command to increase the salary of all employees by 10%.
+Write a SQL command to delete an employee record where EmpID = 103.
+Write a command to delete all records from Employee but keep its structure.
+Write a SQL command to remove the Employee table completely from the database.
+Write a command to rename the Employee table to Staff.
+Write a SQL command to drop the database CompanyDB.
+Write an SQL query to display the names and salaries of employees whose salary is greater than 50000 using the WHERE clause.
+Write an SQL query to display the total salary of each department using the GROUP BY clause.
+Write an SQL query to display the departments where the average salary is greater than 60000 using the HAVING clause.
+Display the first 5 rows in a table
+What is difference between primary key and foreign key and explain about joins 
+
+
+1. Create a database named CompanyDB
+
+CREATE DATABASE CompanyDB;
+
+2. Create an Employee table
+
+CREATE TABLE Employee (
+    EmpID INT,
+    EmpName VARCHAR(50),
+    Salary DECIMAL(10,2)
+);
+
+3. Insert multiple records in a single query
+
+INSERT INTO Employee (EmpID, EmpName, Department, Salary)
+VALUES
+(101, 'Ravi', 'IT', 50000),
+(102, 'Priya', 'HR', 65000),
+(103, 'Amit', 'Finance', 70000),
+(104, 'Sneha', 'IT', 60000),
+(105, 'Rahul', 'HR', 55000);
+
+4. Update Ravi's salary to 55000
+
+UPDATE Employee
+SET Salary = 55000
+WHERE EmpName = 'Ravi';
+
+5. Increase salary of all employees by 10%
+
+UPDATE Employee
+SET Salary = Salary * 1.10;
+
+
+6. Delete employee where EmpID = 103
+
+DELETE FROM Employee
+WHERE EmpID = 103;
+
+7. Delete all records but keep the table structure
+
+TRUNCATE TABLE Employee;
+
+8. Remove the Employee table completely
+
+DROP TABLE Employee;
+
+9. Rename the Employee table to Staff
+
+RENAME TABLE Employee TO Staff;
+
+
+10. Drop the database CompanyDB
+
+DROP DATABASE CompanyDB;
+
+11. Display names and salaries where salary is greater than 50000
+
+SELECT EmpName, Salary
+FROM Employee
+WHERE Salary > 50000;
+
+12. Display total salary of each department (GROUP BY)
+
+SELECT Department, SUM(Salary) AS TotalSalary
+FROM Employee
+GROUP BY Department;
+
+
+13. Display departments where average salary is greater than 60000 (HAVING)
+
+SELECT Department, AVG(Salary) AS AverageSalary
+FROM Employee
+GROUP BY Department
+HAVING AVG(Salary) > 60000;
+
+14. Display the first 5 rows
+
+SELECT * FROM Employee
+LIMIT 5;
+
+15.Difference between Primary Key and Foreign Key
+
+| Primary Key                                 | Foreign Key                                  |
+| ------------------------------------------- | -------------------------------------------- |
+| Uniquely identifies each record in a table. | Links one table to another.                  |
+| Cannot contain NULL values.                 | Can contain NULL values (unless restricted). |
+| Must contain unique values.                 | Duplicate values are allowed.                |
+| Only one primary key per table.             | A table can have multiple foreign keys.      |
+| Ensures entity integrity.                   | Ensures referential integrity.               |
+
+
