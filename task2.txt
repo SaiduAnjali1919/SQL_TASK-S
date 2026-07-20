@@ -1,0 +1,32 @@
+CREATE TABLE Students (
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    age INT CHECK (age BETWEEN 18 AND 30),
+    city VARCHAR(50) DEFAULT 'Hyderabad'
+);
+select *from students;
+CREATE TABLE Employees (
+    emp_id INT AUTO_INCREMENT PRIMARY KEY,
+    emp_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    salary DECIMAL(10,2) CHECK (salary > 15000),
+    joining_date DATE DEFAULT CURRENT_DATE
+);
+CREATE TABLE Products (
+    product_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(100) NOT NULL,
+    barcode VARCHAR(50) UNIQUE,
+    price DECIMAL(10,2) CHECK (price > 0),
+    stock INT DEFAULT 0
+);
+CREATE TABLE Customers (
+    customer_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    age INT CHECK (age >= 18),
+    status VARCHAR(20) DEFAULT 'Active'
+);
+
+
+
