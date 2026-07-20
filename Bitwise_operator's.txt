@@ -1,0 +1,77 @@
+Task 1 :
+
+Decimal	Binary	~ (NOT)	<< 1	<< 2	>> 1	>> 2
+5	101	-6	10	20	2	1
+8	1000	-9	16	32	4	2
+10	1010	-11	20	40	5	2
+12	1100	-13	24	48	6	3
+15	1111	-16	30	60	7	3
+20	10100	-21	40	80	10	5
+25	11001	-26	50	100	12	6
+32	100000	-33	64	128	16	8
+
+
+Task 2 :
+
+a = 10
+b = 6
+print(a & b)
+
+
+a = 12
+b = 5
+print(a | b)
+
+
+a = 15
+b = 9
+print(a ^ b)
+
+
+a = 20
+print(~a)
+
+
+a = 8
+print(a << 1)
+
+
+a = 8
+print(a << 3)
+
+
+a = 64
+print(a >> 2)
+
+
+a = 10
+b = 5
+
+print(a & b)
+print(a | b)
+print(a ^ b)
+
+
+a = 7
+
+print(~a)
+print(a << 2)
+print(a >> 1)
+
+
+write the binary representation of the following numbers:
+
+5
+9
+12
+18
+25
+
+
+Decimal	Binary
+5	101
+9	1001
+12	1100
+18	10010
+25	11001
+
